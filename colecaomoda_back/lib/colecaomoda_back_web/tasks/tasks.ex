@@ -38,6 +38,8 @@ defmodule ColecaomodaBack.Tasks do
   end
 
   def complete_task(task) do
-    update_task(task, %{completed: !task.completed})
+    task
+    |> Task.toggle_changeset()
+    |> Repo.update()
   end
 end
