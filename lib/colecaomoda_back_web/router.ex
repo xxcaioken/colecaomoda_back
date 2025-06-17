@@ -9,7 +9,7 @@ defmodule ColecaomodaBackWeb.Router do
     pipe_through :api
 
     resources "/tasks", TaskController, except: [:new, :edit]
-    patch "/tasks/:id/complete", TaskController, :complete
+    put "/tasks/:id/complete", TaskController, :complete
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
