@@ -1,0 +1,63 @@
+# Compiled artifacts
+/_build/
+/priv/static/
+
+# Dependencies
+/deps/
+
+# Coverage reports  
+/cover/
+
+# Documentation
+/doc/
+
+# Local development
+/.fetch
+/.elixir_ls/
+.tool-versions
+
+# Database files
+*.db
+*.db-*
+/priv/repo/*.db
+
+# Logs
+*.log
+/log/
+
+# Runtime files
+erl_crash.dump
+*.beam
+*.plt
+*.plt.hash
+
+# Package files
+*.ez
+colecaomoda_back-*.tar
+
+# Temporary files
+/tmp/
+*.tmp
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Node modules (se usar assets)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
