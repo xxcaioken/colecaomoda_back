@@ -2,7 +2,7 @@ defmodule ColecaomodaBack.Repo.Migrations.CreateTasks do
   use Ecto.Migration
 
   def change do
-    create table(:todos) do
+    create table(:tasks) do
       add :title, :string, null: false, size: 255
       add :description, :text
       add :completed, :boolean, default: false, null: false
@@ -10,6 +10,6 @@ defmodule ColecaomodaBack.Repo.Migrations.CreateTasks do
       timestamps()
     end
 
-    create index(:todos, [:completed])
+    create index(:tasks, [:completed])
   end
 end

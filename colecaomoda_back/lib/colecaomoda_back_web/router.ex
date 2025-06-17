@@ -7,7 +7,9 @@ defmodule ColecaomodaBackWeb.Router do
 
   scope "/api", ColecaomodaBackWeb do
     pipe_through :api
+
+    resources "/tasks", TaskController, except: [:new, :edit]
+
+    post "/tasks/:id/complete", TaskController, :complete
   end
-
-
 end

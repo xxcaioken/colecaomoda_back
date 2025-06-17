@@ -32,26 +32,9 @@ defmodule ColecaomodaBack.Tasks.Task do
     change(task, completed: !task.completed)
   end
 
-  def delete_changeset(task, attrs \\ %{}) do
-    task
-    |> cast(attrs, [])
-    |> validate_can_be_deleted()
-    |> validate_no_dependencies()
-  end
-
-  defp validate_can_be_deleted(changeset) do
-    task = apply_changes(changeset)
-
-    cond do
-      task.completed == false ->
-        add_error(changeset, :base, "não pode deletar task pendente")
-
-      has_dependencies?(task) ->
-        add_error(changeset, :base, "task tem dependências")
-
-      true ->
-        changeset
-    end
+  # Changeset simples para delete
+  def delete_changeset(task, _attrs \\ %{}) do
+    change(task)
   end
 
   defp trim_and_validate_title(changeset) do
