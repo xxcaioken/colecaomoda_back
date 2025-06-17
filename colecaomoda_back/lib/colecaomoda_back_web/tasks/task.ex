@@ -2,6 +2,7 @@ defmodule ColecaomodaBack.Tasks.Task do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @derive {Jason.Encoder, only: [:id, :title, :description, :completed, :inserted_at, :updated_at]}
   schema "tasks" do
     field :title, :string
     field :description, :string
@@ -32,7 +33,6 @@ defmodule ColecaomodaBack.Tasks.Task do
     change(task, completed: !task.completed)
   end
 
-  # Changeset simples para delete
   def delete_changeset(task, _attrs \\ %{}) do
     change(task)
   end

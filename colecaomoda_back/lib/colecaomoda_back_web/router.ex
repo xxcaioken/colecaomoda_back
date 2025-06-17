@@ -10,6 +10,6 @@ defmodule ColecaomodaBackWeb.Router do
 
     resources "/tasks", TaskController, except: [:new, :edit]
 
-    post "/tasks/:id/complete", TaskController, :complete
+    put "/tasks/:id/complete", TaskController, :complete
   end
 end
