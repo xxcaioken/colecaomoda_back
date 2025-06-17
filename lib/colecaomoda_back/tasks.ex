@@ -103,6 +103,6 @@ defmodule ColecaomodaBack.Tasks do
   end
 
   def complete_task(%Task{} = task) do
-    update_task(task, %{completed: true})
+    update_task(task, %{completed: !task.completed})
   end
 end
